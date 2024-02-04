@@ -3,10 +3,11 @@
 {% block title %} Sign Up {% endblock %}
 
 {% block content %}
-    <form action="" method="POST">
+    <form action="" method="POST" class="bg-gray-200 space-y-3 p-3">
         {% csrf_token %}
+
         {{ form.as_p }}
-        <button>Register</button>
+        <button class="bg-teal-300 py-2 px-3 mt-4">Register</button>
     </form>
 
 {% endblock %}
