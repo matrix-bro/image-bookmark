@@ -9,7 +9,9 @@ class ImageCreateForm(forms.ModelForm):
         model = Image
         fields = ['title', 'url', 'description']
         widgets = {
-            'url': forms.HiddenInput
+            'url': forms.HiddenInput,
+            'title': forms.TextInput(attrs={'class': 'w-full py-2'}),
+            'description': forms.Textarea(attrs={'class': 'w-full py-2 px-2'})
         }
     
     def clean_url(self):
