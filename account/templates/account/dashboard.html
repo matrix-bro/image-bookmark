@@ -3,6 +3,13 @@
 {% block title %} Dashboard {% endblock %}
 
 {% block content %}
-    <h2>Dashboard</h2>
-
+    <h2 class="text-2xl font-semibold border-b">Dashboard</h2>
+    {% with total_images_created=request.user.images_created.count %}
+        <p>Welcome to your dashboard. You have bookmarked {{ total_images_created }} image {{ total_images_created|pluralize }}</p>
+    {% endwith %}
+    <p>Drag the following button to your bookmarks toolbar to bookmark images from other websites -> 
+        <a href="javascript:{% include 'app/bookmarklet_launcher.js' %}" class="bg-teal-600 py-2 px-3 text-white">Bookmark it</a>
+    </p>
+    <br>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
 {% endblock %}
